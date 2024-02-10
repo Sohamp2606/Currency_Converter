@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+                    body{
+                        margin:0;
+                        padding: 0;
+                    }
+                    .container
+                    {
+                        height: 100vh;
+                        width:100%;
+                        /* background-color:aqua; */
+                        font-family:'Poppins',sans-serif;
+                        position:relative;
+                        
+                    }
+                    .container-1
+                    {
+                        height:400px;
+                        
+                        background: linear-gradient(90deg,#e52e71,#ff8a00);
+                    }
+                    
+
+                    .container-1 .navbar{
+                        display:flex;
+                        flex-direction:row;
+                        justify-content:space-between;
+                        align-items: center;
+                        padding: 0 40px;
+                    }
+
+                    .container-1 .navbar .links ul{
+                        display: flex;
+                        justify-content:start;
+
+                        align-items: center;
+                        list-style-type: none;
+                    }
+                    .container-1 .navbar .logo  h1{
+                        font-size:1.2rem;
+                    }
+                    .container-1 .navbar .links ul li{
+                        padding: 0 10px;
+
+                    }
+
+                    .container-1 .navbar .links ul li a{
+                        text-decoration:none;
+                        padding: 10px;
+                        /* background-color : blueviolet; */
+                        border-radius: 5px;
+                        color: white;
+                    }
+
+                    .container-1 .navbar .login-btn{
+                      padding: 4px 16px;
+                      background-color: blueviolet;
+                      border: none;
+                      border-radius: 4px;
+
+                    }
+                    .container-1 .navbar .login-btn p{
+                      margin: 0;
+                      padding: 0;
+                    }
+                    .container-1 .navbar .login-btn a{
+                      text-decoration: none;
+                      color: white;
+                    }
+
+                    .container-1 .heading{
+
+                        font-size:1.3rem;
+                        text-align:center;
+                        padding-top: 50px;
+                    }
+                    .container-1 .heading p{
+                        font-size:0.8rem;
+                        padding: 0;
+                        margin:0;
+                    }
+
+                    .container-2{
+                        padding: 0 30px;
+                        background-color: rgb(209, 209, 209);
+                        margin: 0 120px;
+                        position:absolute;
+                        margin-top: -100px;
+                        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+                        border-radius: 20px;
+                    }
+
+                    .container-2 .converter{
+                        display: flex;
+                        justify-content:space-between;
+                        align-items: center;
+                        width: 100%;
+                        padding:40px 0;
+                    }
+
+                    .container-2 .converter .input-cur{
+                      display: inline-block;
+                      margin: 0 20px;
+                    }
+
+                    .container-2 .converter .source{
+                      display: inline-block
+                    }
+
+                    .container-2 .converter .target{
+                      display: inline-block;
+                    }
+
+                    .container-2 .converter select {
+                        width: 200px;
+                        padding: 10px;
+                        border: 2px solid #ccc; /* Change the border color */
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        margin-top: 6px;
+                        margin-bottom: 16px;
+                        resize: vertical;
+                        /* background-color: #e82020; */
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        outline: none; /* Remove the default outline */
+                    }
+                    
+
+
+            /* Style for submit button */
+                .container-2 .converter input[type=submit] {
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 12px 20px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+            }
+            .container-2 .converter input[type=number] {
+                         width: 250px;
+                        padding: 10px;
+                        border: 2px solid #ccc; /* Change the border color */
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        margin-top: 6px;
+                        margin-bottom: 16px;
+                        resize: vertical;
+                        /* background-color: #e8202; Change the background color */
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        outline: none; /
+            }
+
+            /* Style for submit button on hover */
+               .container-2 .converter input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+            .container-2 .convert-rate{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 60px;
+              padding: 40px 0;
+            }
+
+            .container-2 .convert-rate input{
+              display: block;
+              padding: 10px 25px;
+              margin-right: 50px;
+              border: none;
+              border-radius: 7px;
+              /* background-color: blueviolet; */
+              background-color: #7babf8;
+              cursor: pointer;
+            }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-1 bg-pan-top">
+        <div class="navbar">
+          <div class="logo">
+            <h1>currency converter</h1>
+          </div>
+
+          <div class="links">
+            <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">TOOLS</a></li>
+              <li><a href="#">CONTACT </a></li>
+            </ul>
+          </div>
+
+          <div class="login-btn">
+            <p><a href="#">Login</a></p>
+          </div>
+        </div>
+
+        <div class="heading">
+          <h3>Transform Your Currency Into Global Currency</h3>
+          <p>convert your courrency</p>
+        </div>
+      </div>
+
+      <div class="container-2">
+        <div class="converter">
+          <form method="post" id="form1" action="{% url 'home' %}">
+            {% csrf_token %}
+
+            <div class="input-cur">
+              <label for="amount">Amount:</label>
+              <input type="number" name="amount" step="0.01" required />
+            </div>
+
+            <div class="source input-cur">
+              <label for="source_currency">Source Currency :</label>
+              <select name="source_currency" id="source_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </div>
+
+            <div class="target input-cur">
+              <label for="target_currency">Target Currency :</label>
+
+              <select name="target_currency" id="target_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="JPY">JPY</option>
+                <option value="AUD">AUD</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="convert-rate">
+          <p>
+            Exchange Amount : &nbsp; &nbsp; &nbsp; &nbsp; {% if converted_amt %}
+            {{ converted_amt }} {% else %} 00 {% endif %}
+          </p>
+
+          <input type="submit" value="Convert" form="form1" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
